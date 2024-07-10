@@ -20,11 +20,12 @@ jobs:
           tool: commands
           commands: pytest
           container: mattiabarbo/prova:1.2
-          repo: ../
+          working-directory: ../
+
       - name: SQAaaS assessment with unit testing (QC.Uni) step
         uses: eosc-synergy/sqaaas-assessment-action@v2
         with:
           qc_uni_steps: unittests_pytest
-          repo:  yProv
+          repo:  https://github.com/HPCI-Lab/yProv/tree/77e531ba7195c98e80bd39fbf30b30556ee6730d
              
     
