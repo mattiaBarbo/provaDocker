@@ -20,6 +20,7 @@ jobs:
           tool: commands
           commands: pytest
           container: mattiabarbo/prova:1.2
+          repo: https://github.com/mattiaBarbo/provaDocker1.git
       - name: SQAaaS assessment with unit testing (QC.Uni) step
         uses: eosc-synergy/sqaaas-assessment-action@v2
         with:
