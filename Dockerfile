@@ -4,8 +4,12 @@ FROM python:3.9-slim
 # Imposta la directory di lavoro
 WORKDIR /app
 
+RUN rm -rf /app/* && \
+    git clone https://github.com/mattiaBarbo/SQAaaS_Test.git .
+
 # Copia il file di script nella directory di lavoro
-COPY test_main.py .
+COPY requirements.txt /app/requirements.txt
+RUN pip install -r requirements.txt
 
 # Installa le dipendenze
 RUN pip install requests
