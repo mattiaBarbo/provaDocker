@@ -1,0 +1,29 @@
+name: Quality_Assessment_&_Awarding_v2
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Step definition for validating the workflow
+        uses: eosc-synergy/sqaaas-step-action@v1
+        with:
+          name: unittests_pytest
+          tool: commands
+          commands: pytest
+          container: mattiabarbo/prova:1.2
+      - name: SQAaaS assessment with unit testing (QC.Uni) step
+        uses: eosc-synergy/sqaaas-assessment-action@v2
+        with:
+          qc_uni_steps: unittests_pytest
+          repo:  https://github.com/mattiaBarbo/provaDocker1.git
+          branch: 'main'    
+    
