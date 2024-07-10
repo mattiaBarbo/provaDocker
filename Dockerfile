@@ -1,6 +1,12 @@
 # Usa un'immagine di base Python
 FROM python:3.9-slim
 
+RUN apt-get update && apt-get install -y \
+    curl \
+    git \
+    docker.io \
+    docker-compose
+
 # Imposta la directory di lavoro
 WORKDIR /app
 
