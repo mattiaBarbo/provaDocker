@@ -5,7 +5,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 RUN rm -rf /app/* && \
-    git clone https://github.com/mattiaBarbo/SQAaaS_Test.git .
+    git clone https://github.com/mattiaBarbo/provaDocker1.git .
 
 # Copia il file di script nella directory di lavoro
 COPY requirements.txt /app/requirements.txt
