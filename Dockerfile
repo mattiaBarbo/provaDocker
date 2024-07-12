@@ -22,4 +22,6 @@ RUN pip install requests
 RUN pip install pytest
 
 # Comando che tiene il container in esecuzione
-CMD ["tail", "-f", "/dev/null"]
+COPY script.sh /app/script.sh 
+RUN chmod +x /app/script.sh
+ENTRYPOINT ["/app/script.sh"]
