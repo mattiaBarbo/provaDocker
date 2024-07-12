@@ -1,12 +1,7 @@
 name: Quality_Assessment_&_Awarding_v2
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch
 
 jobs:
   tests:
@@ -19,7 +14,7 @@ jobs:
           name: unittests_pytest
           tool: commands
           commands: pytest
-          container: mattiabarbo/prova:1.3
+          container: mattiabarbo/prova:1.4
 
       - name: SQAaaS assessment with unit testing (QC.Uni) step
         uses: eosc-synergy/sqaaas-assessment-action@v2
