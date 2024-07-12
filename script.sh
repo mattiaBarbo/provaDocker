@@ -1,5 +1,3 @@
-#!/bin/bash
-set -e
 
 # Create Docker volumes if not exist
 for volume in neo4j_data neo4j_logs yprov_data; do
